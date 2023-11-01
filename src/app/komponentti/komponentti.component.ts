@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./komponentti.component.css']
 })
 export class KomponenttiComponent {
+    komponenttiTitle: string;
 
+    constructor() {
+      this.komponenttiTitle = "Ensimmäinen harjoitus";
+    }
 }
