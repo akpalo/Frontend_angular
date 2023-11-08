@@ -1,11 +1,20 @@
-<p>laskin works!</p>
-<app-laskin>
+<!--<p>laskin works!</p>-->
+<h1>{{laskinTitle}}</h1>
 
+<div class=value-container>
+    <mat-grid-list cols="1" rowHeight="100px">
+        <mat-grid-tile class=value-container>
+            <h1>{{result}}</h1>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
 
-    <mat-grid-list cols="2" rowHeight="2:1">
+<div class="buttons">
+    
+    <mat-grid-list cols="4" rowHeight="100px">
         <mat-grid-tile *ngFor="let button of buttons">
-            <button mat-raised-button>{{button}}</button>
+            <button mat-raised-button (click)="calculate(button)">{{button}}</button>
         </mat-grid-tile>
 
     </mat-grid-list>
-</app-laskin>
+</div>

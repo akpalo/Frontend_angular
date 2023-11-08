@@ -1,0 +1,28 @@
+mat-grid-tile {
+    background: lightblue;
+}
+
+mat-grid-list {
+    background: lightblue;
+}
+
+.buttons {
+    background-color: lightblue;
+}
+
+
+
+h1 {
+    text-align: center;
+}
+
+div {
+    width: 300px;
+    height: 100px;
+  }
+
+p {
+    font-size: large;
+    font-weight:bolder;
+    text-align: center;
+}
