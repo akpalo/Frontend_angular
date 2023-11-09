@@ -34,7 +34,7 @@ export class LaskinComponent {
         this.result = '';
       }
       if (value.match(/[+\-*/]/) && this.result[this.result.length - 1].match(/[+\-*/]/)) {
-        // Varmista, ettei lisätä kahta operaattoria peräkkäin
+        
         return;
       }
       this.result += value;

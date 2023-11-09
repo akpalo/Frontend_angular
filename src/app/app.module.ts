@@ -8,13 +8,15 @@ import { KomponenttiComponent } from './komponentti/komponentti.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
 import { LaskinComponent } from './laskin/laskin.component';
+import { FeedbackComponent } from './feedback/feedback.component';
  
 
 @NgModule({
   declarations: [
     AppComponent,
     KomponenttiComponent,
-    LaskinComponent
+    LaskinComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
