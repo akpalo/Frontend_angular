@@ -9,14 +9,16 @@ import { Question } from '../question';
 export class FeedbackComponent {
 
   feedbackTitle: string;
+  feedbackInstructions: string; 
   
 
  
 
-  questions: Array <Question> = [new Question('Kysymys 1'), new Question('Kysymys 2'), new Question('Kysymys 3')]
+  questions: Array <Question> = [new Question('Mitä pidit kurssista - Tietokannat?'), new Question('Mitä pidit kurssista - Prosessilouhinta?'), new Question('Mitä pidit kurssista - Svenska i arbetslivet?')]
 
   constructor() {
     this.feedbackTitle = 'Palautesivu'
+    this.feedbackInstructions = 'HUOM. Jos et osaa sanoa mielipidettä kurssista, vie arviosi nollaan.'
   }
 
   

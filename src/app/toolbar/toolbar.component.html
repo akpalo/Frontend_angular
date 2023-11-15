@@ -1,0 +1,13 @@
+<!--<p>toolbar works!</p>-->
+
+<mat-toolbar class="toolbar">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Fronted-työkalut valikko</span>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+    <a mat-menu-item routerLink="/laskin" routerLinkActive="active">Laskin</a>
+    <a mat-menu-item routerLink="/feedback" routerLinkActive="active">Palaute</a>
+</mat-menu>

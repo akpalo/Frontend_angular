@@ -1,32 +1,43 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {MatGridListModule} from '@angular/material/grid-list';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { KomponenttiComponent } from './komponentti/komponentti.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSliderModule} from '@angular/material/slider';
-import { LaskinComponent } from './laskin/laskin.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { FeedbackComponent } from './feedback/feedback.component';
- 
+import { KomponenttiComponent } from './komponentti/komponentti.component';
+import { LaskinComponent } from './laskin/laskin.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSliderModule} from '@angular/material/slider';
+import { NgModule } from '@angular/core';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FeedbackComponent,
     KomponenttiComponent,
     LaskinComponent,
-    FeedbackComponent
+    ToolbarComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatSliderModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export class ToolbarBasicExample {}

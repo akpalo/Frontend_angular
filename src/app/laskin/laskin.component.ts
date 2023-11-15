@@ -11,9 +11,11 @@ export class LaskinComponent {
   ];
 
   laskinTitle: string;
+  laskinInstructions: string;
 
   constructor() {
     this.laskinTitle = 'Nelilaskin';
+    this.laskinInstructions = 'Paina aluksi C - painiketta'
   }
 
   result: any;

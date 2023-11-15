@@ -1,19 +1,21 @@
 <!--<p>feedback works!</p>-->
-
-<div class="title">
-    <h1>{{feedbackTitle}}</h1>
-</div>
-
 <div class="container">
-    <div *ngFor="let question of questions">
-        <p>{{question.questionTxt}}</p>
-    
-    <mat-slider (input)="onInputChange($event,question)" min="0" max="3" step="1" showTickMarks discrete>
-        <input matSliderThumb>
-    </mat-slider>
-    <h3>{{question.feedback}}</h3>
+    <div class="title">
+        <h1>{{feedbackTitle}}</h1>
+        <h4>{{feedbackInstructions}}</h4>
     </div>
-    
 
-    
+    <div class="feedback-container">
+        <div *ngFor="let question of questions">
+            <p>{{question.questionTxt}}</p>
+
+            <mat-slider (input)="onInputChange($event,question)" min="0" max="3" step="1" showTickMarks discrete>
+                <input matSliderThumb>
+            </mat-slider>
+            <h3>{{question.feedback}}</h3>
+        </div>
+
+
+
+    </div>
 </div>

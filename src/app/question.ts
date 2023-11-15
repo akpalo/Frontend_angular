@@ -15,7 +15,7 @@ export class Question {
   setFeedback(value: number) {
     console.log(value)
     if (value == 0){
-      this.feedback = 'Ei vielä arvioitu'
+      this.feedback = 'En osaa sanoa'
     }
     else if (value == 1){
       this.feedback = 'Huono'
@@ -25,6 +25,9 @@ export class Question {
     }
     else if (value == 3){
       this.feedback = 'Hyvä'
+    }
+    else {
+      this.feedback = 'Ei vielä arvioitu'
     }
 }
  

@@ -1,5 +1,6 @@
 mat-grid-tile {
     background: lightblue;
+    align-items: center;
 }
 
 mat-grid-list {
@@ -19,10 +20,36 @@ h1 {
 div {
     width: 300px;
     height: 100px;
+    align-items: center;
   }
 
 p {
     font-size: large;
     font-weight:bolder;
+    text-align: center;
+}
+
+.value-container {
+    align-items: center;
+    align-content: center;
+    
+}
+.container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    max-width: 400px;
+    max-height: 400px;
+    padding-top: 50px;
+}
+
+.title {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.instructions {
+    padding-bottom: 50px;
     text-align: center;
 }
