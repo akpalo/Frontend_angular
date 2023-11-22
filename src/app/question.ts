@@ -1,4 +1,4 @@
-import { MatSlider } from "@angular/material/slider";
+
 
 export class Question {
     questionTxt: string;
