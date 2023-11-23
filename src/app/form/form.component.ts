@@ -18,6 +18,11 @@ export class FormComponent {
     this.currentPerson.userName
     this.currentPerson.passWord
     this.currentPerson.passWord_2
+    this.currentPerson.termsAndConditions
+  }
+
+  onSubmit() {
+    console.log('Form data: ', this.currentPerson)
   }
 }
 

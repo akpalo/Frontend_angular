@@ -1,66 +1,70 @@
-<h1>Registration form</h1>
+<h1 class="title">Registration form</h1>
 <div class="container">
-    <form class="example-form">
+    <form class="example-form" (ngSubmit)="onSubmit()">
 
-        
 
-            <mat-form-field class="mat-form-field">
-                <mat-label>First name</mat-label>
-                <input matInput placeholder="first name" name="firstName" [(ngModel)]="currentPerson.firstName"
-                    #fname="ngModel" required minlength="2" pattern="^[a-zA-Z ]*$">
-                <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
-                <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
-                <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
-            </mat-form-field>
-            <mat-form-field class="mat-form-field">
-                <mat-label>Last name</mat-label>
-                <input matInput placeholder="last name" name="lastName" [(ngModel)]="currentPerson.lastName"
-                    #lname="ngModel" required minlength="2" pattern="^[a-zA-Z ]*$">
-                <mat-error *ngIf="lname.hasError('required')">Enter your last name</mat-error>
-                <mat-error *ngIf="lname.hasError('minlength')">Minimum 2 characters required</mat-error>
-                <mat-error *ngIf="lname.hasError('pattern')">Must be valid name</mat-error>
-            </mat-form-field>
-            <mat-form-field class="mat-form-field">
-                <mat-label>PersonID</mat-label>
-                <input matInput placeholder="person ID" name="personID" [(ngModel)]="currentPerson.id"
-                    #id="ngModel" required minlength="1" pattern="^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d\+|\d\d-|[01]\dA)\d{3}[\dA-Z]$">
-                <mat-error *ngIf="id.hasError('pattern')">Must be a valid ID</mat-error>
-                <mat-error *ngIf="id.hasError('required')">Enter your ID</mat-error>
-            </mat-form-field>
-            <mat-form-field class="mat-form-field">
-                <mat-label>Email</mat-label>
-                <input matInput placeholder="Email" name="email" [(ngModel)]="currentPerson.email"
-                    #email="ngModel" required minlength="1" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'>
-                <mat-error *ngIf="email.hasError('pattern')">Must be a valid email</mat-error>
-                <mat-error *ngIf="email.hasError('required')">Enter your email</mat-error>
-            </mat-form-field>
-            <mat-form-field class="mat-form-field">
-                <mat-label>Username</mat-label>
-                <input matInput placeholder="Username" name="userName" [(ngModel)]="currentPerson.userName"
-                    #userName="ngModel" required minlength="6">
-                <mat-error *ngIf="userName.hasError('minlength')">Username must be 6 characters or longer</mat-error>
-                <mat-error *ngIf="userName.hasError('required')">Enter your user name</mat-error>
-            </mat-form-field>
-            <mat-form-field class="mat-form-field">
-                <mat-label>Password</mat-label>
-                <input matInput type="password" name="passWord1" [(ngModel)]="currentPerson.passWord"
-                    #pwrd="ngModel" required minlength="8"> 
-                <mat-error *ngIf="pwrd.hasError('minlength')">Password must be at least 8 characters or longer</mat-error>
-                <mat-error *ngIf="pwrd.hasError('required')">Enter your password</mat-error>
-            </mat-form-field>
-            <mat-form-field class="mat-form-field">
-                <mat-label>Confirm password</mat-label>
-                <input matInput type="password" name="passWord2" [(ngModel)]="currentPerson.passWord_2"
-                    #pwrd2="ngModel" required minlength="8" pattern= "{{pwrd.value}}">
-                <mat-error *ngIf="pwrd2.hasError('pattern')">Password isn't compatible</mat-error>
-                <mat-error *ngIf="pwrd2.hasError('required')">Enter your password</mat-error>
-            </mat-form-field>
 
-            <mat-label>Accept terms and conditions</mat-label>
-            <input type="checkbox" required>
-            
-            <input type="submit">
-        
+        <mat-form-field class="mat-form-field">
+            <mat-label>First name</mat-label>
+            <input matInput placeholder="first name" name="firstName" [(ngModel)]="currentPerson.firstName"
+                #fname="ngModel" required minlength="2" pattern="^[a-zA-Z ]*$">
+            <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
+            <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
+            <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label>Last name</mat-label>
+            <input matInput placeholder="last name" name="lastName" [(ngModel)]="currentPerson.lastName"
+                #lname="ngModel" required minlength="2" pattern="^[a-zA-Z ]*$">
+            <mat-error *ngIf="lname.hasError('required')">Enter your last name</mat-error>
+            <mat-error *ngIf="lname.hasError('minlength')">Minimum 2 characters required</mat-error>
+            <mat-error *ngIf="lname.hasError('pattern')">Must be valid name</mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label>PersonID</mat-label>
+            <input matInput placeholder="person ID" name="personID" [(ngModel)]="currentPerson.id" #id="ngModel"
+                required minlength="1"
+                pattern="^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d\+|\d\d-|[01]\dA)\d{3}[\dA-Z]$">
+            <mat-error *ngIf="id.hasError('pattern')">Must be a valid ID</mat-error>
+            <mat-error *ngIf="id.hasError('required')">Enter your ID</mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" name="email" [(ngModel)]="currentPerson.email" #email="ngModel" required
+                minlength="1" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'>
+            <mat-error *ngIf="email.hasError('pattern')">Must be a valid email</mat-error>
+            <mat-error *ngIf="email.hasError('required')">Enter your email</mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" name="userName" [(ngModel)]="currentPerson.userName"
+                #userName="ngModel" required minlength="6">
+            <mat-error *ngIf="userName.hasError('minlength')">Username must be 6 characters or longer</mat-error>
+            <mat-error *ngIf="userName.hasError('required')">Enter your user name</mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="passWord1" [(ngModel)]="currentPerson.passWord" #pwrd="ngModel"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$" required>
+            <mat-error *ngIf="pwrd.hasError('required')">Enter your password</mat-error>
+            <mat-error *ngIf="pwrd.hasError('pattern')">Password requirements are not met</mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label>Confirm password</mat-label>
+            <input matInput type="password" name="passWord2" [(ngModel)]="currentPerson.passWord_2" #pwrd2="ngModel"
+                required pattern="{{pwrd.value}}">
+            <mat-error *ngIf="pwrd2.hasError('pattern')">Password isn't compatible</mat-error>
+            <mat-error *ngIf="pwrd2.hasError('required')">Enter your password</mat-error>
+        </mat-form-field>
+
+        <mat-label>Accept terms and conditions
+            <input type="checkbox" name="termsandconditions" [(ngModel)]="currentPerson.termsAndConditions" #tAndC required>
+        </mat-label>
+        <mat-error *ngIf="!currentPerson.termsAndConditions">Terms and conditions must be accepted</mat-error>
+        <p>
+        <button type="submit">Tallenna</button>
+
+
 
     </form>
 </div>

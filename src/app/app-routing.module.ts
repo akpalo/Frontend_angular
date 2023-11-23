@@ -4,6 +4,7 @@ import { KomponenttiComponent } from './komponentti/komponentti.component';
 import { LaskinComponent } from './laskin/laskin.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FormComponent } from './form/form.component';
+import { ReactiveformComponent} from './reactiveform/reactiveform.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path:'komponentti', component: KomponenttiComponent},
   {path:'laskin', component: LaskinComponent},
   {path:'feedback', component: FeedbackComponent},
-  {path:'form', component: FormComponent}
+  {path:'form', component: FormComponent},
+  {path:'reactiveform', component: ReactiveformComponent}
 ];
 
 

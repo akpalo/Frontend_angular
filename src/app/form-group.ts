@@ -1,4 +1,4 @@
-export class Person {
+export class FormGroup {
     firstName : string = "";
     lastName : string = "";
     id : string = "";
@@ -6,5 +6,4 @@ export class Person {
     userName : string = "";
     passWord : string = "";
     passWord_2 : string = "";
-    termsAndConditions : boolean = false;
 }

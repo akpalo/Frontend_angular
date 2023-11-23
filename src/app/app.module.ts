@@ -15,13 +15,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatRadioModule} from '@angular/material/radio';
-import {ThemePalette} from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSliderModule} from '@angular/material/slider';
 import { NgModule } from '@angular/core';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FormComponent } from './form/form.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormComponent } from './form/form.component';
     KomponenttiComponent,
     LaskinComponent,
     ToolbarComponent,
-    FormComponent
+    FormComponent,
+    ReactiveformComponent
   ],
   imports: [
     AppRoutingModule,
@@ -49,6 +51,7 @@ import { FormComponent } from './form/form.component';
     MatToolbarModule,
     MatRadioModule,
     MatSidenavModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
