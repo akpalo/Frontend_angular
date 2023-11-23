@@ -32,11 +32,12 @@ export class ReactiveformComponent implements OnInit {
     this.profileForm = new FormGroup({
       firstName: new FormControl('Anna', [Validators.required, Validators.minLength(2), Validators.pattern("^[a-zA-Z ]*$")]),
       lastName: new FormControl('Puu', [Validators.required, Validators.minLength(2), Validators.pattern("^[a-zA-Z ]*$")]),
-      personID: new FormControl('123456-2234', [Validators.required, Validators.minLength(1), Validators.pattern("^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d\+|\d\d-|[01]\dA)\d{3}[\dA-Z]$")]),
+      personID: new FormControl('280698-5597', [Validators.required, Validators.minLength(1), Validators.pattern("/^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d\+|\d\d-|[01]\dA)\d{3}[\dA-Z]$/")]),
       email: new FormControl('anna.puu@gmail.com', [Validators.required, Validators.minLength(1), Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]),
       userName: new FormControl('annapuu123', [Validators.required, Validators.minLength(6)]),
       password: new FormControl('Lappeenranta1!', [Validators.required, Validators.minLength(8)]),
-      confirmPassword: new FormControl('Lappeenranta1!', [Validators.required, Validators.minLength(8), Validators.pattern('Lappeenranta1!')])
+      confirmPassword: new FormControl('Lappeenranta1!', [Validators.required, Validators.minLength(8), Validators.pattern('Lappeenranta1!')]),
+      termsAndConditions: new FormControl('true') 
     });
 
 
@@ -66,12 +67,23 @@ export class ReactiveformComponent implements OnInit {
   get confirmPassword() {
     return this.profileForm.get('confirmPassword')
   }
+  get termsAndConditions() {
+    return this.profileForm.get('termsAndConditions')
+  }
 
   onSubmit() {
     console.log('profileForm.value: ' + this.profileForm.value);
     console.log('profileForm.value: ' + this.profileForm.value.firstName);
+    console.log('profileForm.value: ' + this.profileForm.value.lastName);
+    console.log('profileForm.value: ' + this.profileForm.value.personID);
+    console.log('profileForm.value: ' + this.profileForm.value.email);
+    console.log('profileForm.value: ' + this.profileForm.value.userName);
+    console.log('profileForm.value: ' + this.profileForm.value.password);
+    console.log('profileForm.value: ' + this.profileForm.value.confirmPassword);
     console.log('profileForm.valid: ' + this.profileForm.valid);
-    this.profileForm.reset();
+    console.log('Form data: ', this.profileForm)
+    
+    
   }
 }
 

@@ -57,5 +57,13 @@
                 <mat-error *ngIf="confirmPassword?.hasError('minlength')">Password must be at least 8 characters or longer</mat-error>
                 <mat-error *ngIf="confirmPassword?.hasError('pattern')">Password isn't compatible</mat-error>
         </mat-form-field>
+        <mat-checkbox formControlName="termsAndConditions">Accept terms and conditions
+            <mat-error *ngIf="termsAndConditions?.invalid && termsAndConditions?.dirty">
+                You must accept terms and conditions
+            </mat-error>
+        </mat-checkbox>
+        <button type="submit">Submit</button>
+
+    </form>
       
         

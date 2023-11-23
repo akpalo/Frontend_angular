@@ -23,6 +23,7 @@ import { NgModule } from '@angular/core';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,9 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     MatSidenavModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

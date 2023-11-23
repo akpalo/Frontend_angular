@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Question } from '../question';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-feedback',
@@ -14,13 +15,16 @@ export class FeedbackComponent {
 
  
 
-  questions: Array <Question> = [new Question('Mitä pidit kurssista - Tietokannat?'), new Question('Mitä pidit kurssista - Prosessilouhinta?'), new Question('Mitä pidit kurssista - Svenska i arbetslivet?')]
+  questions: Array<Question> = [];
 
-  constructor() {
+  constructor(private dataService: DataService) {
     this.feedbackTitle = 'Palautesivu'
     this.feedbackInstructions = 'HUOM. Jos et osaa sanoa mielipidettä kurssista, vie arviosi nollaan.'
+    this.dataService.getQuestions()
+    this.questions = this.dataService.getQuestions()
   }
 
+  
   
 
   onInputChange(event: any, question: Question){
