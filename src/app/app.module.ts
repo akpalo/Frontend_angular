@@ -16,6 +16,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSliderModule} from '@angular/material/slider';
@@ -24,6 +25,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { DataService } from './services/data.service';
+import { CinemaComponent } from './cinema/cinema.component';
+import { CinemaserviceService } from './services/cinemaService.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +38,8 @@ import { DataService } from './services/data.service';
     LaskinComponent,
     ToolbarComponent,
     FormComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
+    CinemaComponent
   ],
   imports: [
     AppRoutingModule,
@@ -44,6 +50,7 @@ import { DataService } from './services/data.service';
     MatCardModule,
     MatCheckboxModule,
     MatSliderModule,
+    MatExpansionModule,
     MatFormFieldModule,
     MatGridListModule,
     MatIconModule,
@@ -52,10 +59,13 @@ import { DataService } from './services/data.service';
     MatToolbarModule,
     MatRadioModule,
     MatSidenavModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    DataService
+    DataService,
+    CinemaserviceService
+    
   ],
   bootstrap: [AppComponent]
 })
