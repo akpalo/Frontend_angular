@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CinemaserviceService } from '../services/cinemaService.service';
 import { Observable } from 'rxjs';
 
@@ -8,13 +8,18 @@ import { Observable } from 'rxjs';
   templateUrl: './cinema.component.html',
   styleUrls: ['./cinema.component.css']
 })
-export class CinemaComponent {
+export class CinemaComponent implements OnInit {
 
-  public cinemaData$: Observable<any>
+  public cinemaData$: Observable<any>;
 
-  constructor(public cinemaData$ : CinemaserviceService) {
-    this.cinemaData$ = this.cinemaserviceService.getData();
+  constructor(private cinemaService: CinemaserviceService) {
+    this.cinemaData$ = new Observable<any>();
   }
+
+  ngOnInit(): void {
+    this.cinemaData$ = this.cinemaService.getData();
+  }
+    
 
   
   

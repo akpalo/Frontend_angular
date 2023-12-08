@@ -6,16 +6,21 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveformComponent} from './reactiveform/reactiveform.component';
 import { CinemaComponent } from './cinema/cinema.component';
+import { LoginComponent } from './login/login.component';
+import { AdminviewComponent } from './adminview/adminview.component';
+import { reitinValvoja } from './reitinvalvoja.guard';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'cinema', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path:'komponentti', component: KomponenttiComponent},
   {path:'laskin', component: LaskinComponent},
   {path:'feedback', component: FeedbackComponent},
   {path:'form', component: FormComponent},
   {path:'reactiveform', component: ReactiveformComponent},
-  {path:'cinema', component: CinemaComponent}
+  {path:'cinema', component: CinemaComponent},
+  {path:'adminview', component: AdminviewComponent, canActivate: [reitinValvoja]},
+  {path:'login', component: LoginComponent}
 ];
 
 
