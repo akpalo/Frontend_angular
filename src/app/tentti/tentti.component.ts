@@ -14,7 +14,7 @@ export class TenttiComponent {
   lippuHinta = 16;
   opiskelijaHinta = 10;
   elakelaisHinta = 8;
-  yhteisHinta = 20;
+  yhteisHinta = 0;
 
   
   uusiTilaaja : Service = new Service();
