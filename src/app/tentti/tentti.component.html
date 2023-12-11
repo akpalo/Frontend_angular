@@ -1,0 +1,55 @@
+<!--Tehtävässä käytetään komponentin lisäksi kahta luokkaa "kappalemäärä" ja "service" ja palvelua "lippu"-->
+<div class="container">
+    
+        <h1 class="title">Maatalousnäyttelyn 2024 liput nyt myynnissä</h1>
+        <h2 class="title">Valitse ostettavien lippujen määrä</h2>
+
+        <div class="sliderContainer">
+            <div *ngFor="let kappale of kappaleet">
+                <p>{{kappale.lippuTxt}}</p>
+
+                <mat-slider (input)="onInputChange($event,kappale)" min="0" max="10" step="1">
+                    <input matSliderThumb>
+                </mat-slider>
+                <h3>{{kappale.kpl}}</h3>
+            </div>
+            <div>
+                <mat-slide-toggle (click)="alennus()" [(ngModel)]="isChecked">
+                    MTK:n Jäsen {{isChecked}}
+                </mat-slide-toggle>
+            </div>
+            <div class="hinta">
+                Yhteensä: {{yhteisHinta}} €
+            </div>
+        </div>
+        <div class="form">
+
+            <mat-form-field class="mat-form-field">
+                <mat-label>First name</mat-label>
+                <input matInput placeholder="first name" name="firstName" [(ngModel)]="uusiTilaaja.firstName"
+                    #fname="ngModel" required minlength="2" pattern="^[a-zA-Z ]*$">
+                <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
+                <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
+                <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
+            </mat-form-field>
+            <mat-form-field class="mat-form-field">
+                <mat-label>Last name</mat-label>
+                <input matInput placeholder="last name" name="lastName" [(ngModel)]="uusiTilaaja.lastName"
+                    #lname="ngModel" required minlength="2" pattern="^[a-zA-Z ]*$">
+                <mat-error *ngIf="lname.hasError('required')">Enter your last name</mat-error>
+                <mat-error *ngIf="lname.hasError('minlength')">Minimum 2 characters required</mat-error>
+                <mat-error *ngIf="lname.hasError('pattern')">Must be valid name</mat-error>
+            </mat-form-field>
+            <mat-form-field class="mat-form-field">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" name="email" [(ngModel)]="uusiTilaaja.email" #email="ngModel"
+                    required minlength="1" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'>
+                <mat-error *ngIf="email.hasError('pattern')">Must be a valid email</mat-error>
+                <mat-error *ngIf="email.hasError('required')">Enter your email</mat-error>
+            </mat-form-field>
+       
+            <div>    
+                <button type="submit" (click)="tilaus()" mat-raised-button color="primary">Tilaa</button>
+            </div>
+        </div>
+</div>

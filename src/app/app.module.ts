@@ -36,6 +36,8 @@ import { CinemaserviceService } from './services/cinemaService.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminviewComponent } from './adminview/adminview.component';
 import { LoginComponent } from './login/login.component';
+import { TenttiComponent } from './tentti/tentti.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -50,7 +52,8 @@ import { LoginComponent } from './login/login.component';
     ReactiveformComponent,
     CinemaComponent,
     AdminviewComponent,
-    LoginComponent
+    LoginComponent,
+    TenttiComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -76,7 +79,8 @@ import { LoginComponent } from './login/login.component';
     MatRadioModule,
     MatSidenavModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSlideToggleModule
   ],
   providers: [
     DataService,
