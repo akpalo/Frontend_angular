@@ -18,9 +18,9 @@ export class LaskinComponent {
     this.laskinInstructions = 'Paina aluksi C - painiketta'
   }
 
-  result: any;
+  result: string = '';
 
-  calculate(value: any) {
+  calculate(value: any): number {
     console.log('addValue value: ' + value)
 
     if (value === 'C') {
@@ -28,8 +28,10 @@ export class LaskinComponent {
     } else if (value === '=') {
       try {
         this.result = eval(this.result);
+        return parseFloat(this.result);
       } catch (error) {
         this.result = 'Error';
+        return NaN;
       }
     } else {
       if (this.result === 'Error') {
@@ -37,11 +39,11 @@ export class LaskinComponent {
       }
       if (value.match(/[+\-*/]/) && this.result[this.result.length - 1].match(/[+\-*/]/)) {
         
-        return;
+        return NaN;
       }
       this.result += value;
     }
-
+    return NaN;
     }
   }
 
