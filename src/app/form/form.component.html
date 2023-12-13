@@ -57,14 +57,12 @@
             <mat-error *ngIf="pwrd2.hasError('required')">Enter your password</mat-error>
         </mat-form-field>
 
-        <mat-label>Accept terms and conditions
-            <input type="checkbox" name="termsandconditions" [(ngModel)]="currentPerson.termsAndConditions" #tAndC required>
-        </mat-label>
-        <mat-error *ngIf="!currentPerson.termsAndConditions">Terms and conditions must be accepted</mat-error>
-        <p>
-        <button mat-raised-button color="primary" type="submit">Submit</button>
-
-
-
-    </form>
-</div>
+        
+            <mat-checkbox id="check" color="primary" name="termsandconditions" [(ngModel)]="currentPerson.termsAndConditions"
+                #tAndC required>Accept terms and conditions
+            </mat-checkbox>
+                <p>
+                    <mat-error *ngIf="!currentPerson.termsAndConditions">Terms and conditions must be
+                        accepted</mat-error>
+                </p>
+                    <button id="subBtn" mat-raised-button color="primary" type="submit" [disabled]="!currentPerson.termsAndConditions" >Submit</button>

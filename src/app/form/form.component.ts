@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Person } from '../person';
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -9,6 +10,8 @@ import { Person } from '../person';
 export class FormComponent {
   
   currentPerson : Person = new Person();
+  
+
 
   Constructor() {
     this.currentPerson.firstName
@@ -21,9 +24,13 @@ export class FormComponent {
     this.currentPerson.termsAndConditions
   }
 
+  
+
   onSubmit() {
     console.log('Form data: ', this.currentPerson)
   }
+
+  
 }
 
 
