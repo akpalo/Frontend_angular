@@ -8,19 +8,19 @@ import { ReactiveformComponent} from './reactiveform/reactiveform.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import { LoginComponent } from './login/login.component';
 import { AdminviewComponent } from './adminview/adminview.component';
-import { reitinValvoja } from './reitinvalvoja.guard';
+import { ReitinValvoja } from './reitinvalvoja.guard';
 import { TenttiComponent } from './tentti/tentti.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'tentti', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path:'komponentti', component: KomponenttiComponent},
   {path:'laskin', component: LaskinComponent},
   {path:'feedback', component: FeedbackComponent},
   {path:'form', component: FormComponent},
   {path:'reactiveform', component: ReactiveformComponent},
   {path:'cinema', component: CinemaComponent},
-  {path:'adminview', component: AdminviewComponent, canActivate: [reitinValvoja]},
+  {path:'adminview', component: AdminviewComponent, canActivate: [ReitinValvoja]},
   {path:'login', component: LoginComponent},
   {path:'tentti', component: TenttiComponent}
 ];

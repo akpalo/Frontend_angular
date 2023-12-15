@@ -38,6 +38,7 @@ import { AdminviewComponent } from './adminview/adminview.component';
 import { LoginComponent } from './login/login.component';
 import { TenttiComponent } from './tentti/tentti.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { HakuPipe } from './pipes/haku.pipe';
 
 
 
@@ -53,7 +54,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     CinemaComponent,
     AdminviewComponent,
     LoginComponent,
-    TenttiComponent
+    TenttiComponent,
+    HakuPipe
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

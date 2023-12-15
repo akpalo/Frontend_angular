@@ -6,18 +6,18 @@
                 <div>
                     <mat-form-field>
                         <mat-label>Email</mat-label>
-                        <input matInput placeholder="pat@example.com" required ng-model="all">
+                        <input matInput placeholder="pat@example.com" required [(ngModel)]="email">
                     </mat-form-field>
                 </div>
                 <div>
 
                     <mat-form-field>
                         <mat-label>Password</mat-label>
-                        <input matInput required ng-model="all">
+                        <input matInput required [(ngModel)]="password">
                     </mat-form-field>
                 </div>
                 <div>
-                    <button mat-raised-button color primary>Login</button>
+                    <button mat-raised-button color primary (click)="onLogin(email, password)">Login</button>
                     <button mat-button (click)="cancelBtnClick()">Cancel</button>
                 </div>
             </form>

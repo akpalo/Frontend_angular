@@ -11,9 +11,11 @@ import { Observable } from 'rxjs';
 export class CinemaComponent implements OnInit {
 
   public cinemaData$: Observable<any>;
+  searchTerm: string = ''
 
   constructor(private cinemaService: CinemaserviceService) {
     this.cinemaData$ = new Observable<any>();
+    
   }
 
   ngOnInit(): void {

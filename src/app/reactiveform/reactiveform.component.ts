@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -32,7 +32,7 @@ export class ReactiveformComponent implements OnInit {
     this.profileForm = new FormGroup({
       firstName: new FormControl('Anna', [Validators.required, Validators.minLength(2), Validators.pattern("^[a-zA-Z ]*$")]),
       lastName: new FormControl('Puu', [Validators.required, Validators.minLength(2), Validators.pattern("^[a-zA-Z ]*$")]),
-      personID: new FormControl('280698-5597', [Validators.required, Validators.minLength(1), Validators.pattern("/^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d\+|\d\d-|[01]\dA)\d{3}[\dA-Z]$/")]),
+      personID: new FormControl('123489-4422', [Validators.required, Validators.minLength(1), Validators.pattern("/^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d\+|\d\d-|[01]\dA)\d{3}[\dA-Z]$/")]),
       email: new FormControl('anna.puu@gmail.com', [Validators.required, Validators.minLength(1), Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]),
       userName: new FormControl('annapuu123', [Validators.required, Validators.minLength(6)]),
       password: new FormControl('Lappeenranta1!', [Validators.required, Validators.minLength(8)]),
